@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notes</title>
+     <div class="header">
+      <a href="/" class="logo">CompanyLogo</a>
+      <div class="header-right">
+        <a class="active" href="/">Home</a>
+        <a href="contact">Contact</a>
+        <a href="about">About</a>
+      </div>
+    </div> 
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
