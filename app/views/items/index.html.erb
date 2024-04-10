@@ -1,0 +1,21 @@
+<table>
+ <thead>
+  <tr>
+    <th>ID</th>
+    <th>title</th>
+    <th>expected cost</th>
+    <th>is done</th>
+  </tr>
+ </thead>
+ <tbody>
+    <% @items.each do |item| %>
+        <tr>
+         <td><%=item.id%></td>
+         <td><%=item.title%></td>
+         <td><%=item.expected_cost%></td>
+         <td><%=item.is_done%></td> 
+        </tr>
+    <% end %>
+    
+ </tbody>
+</table>
