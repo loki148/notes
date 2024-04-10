@@ -1,5 +1,9 @@
 class NotesController < ApplicationController
     def show
-        @instnote = Note.new(title:'the best of the best', body: 'lorem ipsum ...')
+        @note = Note.find(params[:id])
+    end
+
+    def index
+        @notes = Note.all
     end
 end

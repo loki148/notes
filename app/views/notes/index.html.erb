@@ -1,0 +1,25 @@
+<ul>
+<% @notes.each do |note| %>
+    <li><%=note.name%>, <%=note.body%></li> 
+<% end %>
+</ul>
+
+<table>
+ <thead>
+  <tr>
+    <th>ID</th>
+    <th>name</th>
+    <th>body</th>
+  </tr>
+ </thead>
+ <tbody>
+    <% @notes.each do |note| %>
+        <tr>
+         <td><%=note.id%></td>
+         <td><%=note.name%></td>
+         <td><%=note.body%></td> 
+        </tr>
+    <% end %>
+    
+ </tbody>
+</table>
