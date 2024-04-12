@@ -1,0 +1,13 @@
+<%=link_to 'back to notes', notes_path%>
+<%= form_with url: notes_path do |f|%>
+    <div>
+        <%= f.label :name%>
+        <%= f.text_field :name%>
+    </div>
+    <div>
+        <%= f.label :body%>
+        <%= f.text_area :body%>
+    </div>
+    <%= f.submit 'CREATE'%>
+
+<%end%>
