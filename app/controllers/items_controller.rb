@@ -25,4 +25,10 @@ class ItemsController < ApplicationController
         @item.update(title:params[:title] ,expected_cost:params[:expected_cost], is_done:params[:is_done])
         redirect_to item_path(@item.id)
     end
+
+    def destroy
+        @item = Item.find(params[:id])
+        @item.delete
+        redirect_to items_path
+    end
 end

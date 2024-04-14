@@ -17,6 +17,7 @@
          <td><%=item.expected_cost%></td>
          <td><%=item.is_done%></td> 
          <td><%=link_to 'edit', edit_item_path(item.id)%></td> 
+         <td><%=button_to 'delete', item, method: :delete%></td> 
         </tr>
     <% end %>
     
