@@ -14,7 +14,8 @@
          <td><%=link_to note.id, note_path(id: note.id)%></td>
          <td><%=link_to note.name, note_path(note)%></td>
          <td><%=link_to note.body, note%></td> 
-         <td><%=link_to'edit', edit_note_path(note.id)%></td> 
+         <td><%=link_to'edit', edit_note_path(note.id)%></td>
+         <td><%= button_to 'delete', note, method: :delete %></td>
         </tr>
     <% end %>
     

@@ -25,4 +25,10 @@ class NotesController < ApplicationController
         @note.update(name: params[:name], body: params[:body])
         redirect_to @note
     end
+
+    def destroy
+        @note = Note.find(params[:id])
+        @note.delete
+        redirect_to notes_path
+    end
 end
