@@ -1,18 +1,18 @@
 <%=link_to 'back to items', items_path%>
 <%=link_to 'back to item', item_path%>
-<%= form_with url: item_path, method: :patch do |f|%>
+<%= form_with model: @item do |f|%>
     <div>
         <%= f.label :title%>
-        <%= f.text_field :title, value: @item.title%>
+        <%= f.text_field :title%>
     </div>
     <div>
         <%= f.label :expected_cost%>
-        <%= f.number_field :expected_cost, step:0.01, value: @item.expected_cost%>
+        <%= f.number_field :expected_cost, step:0.01%>
     </div>
     <div>
         <%= f.label :is_done%>
-        <%= f.check_box  :is_done, checked: @item.is_done%>
+        <%= f.check_box  :is_done%>
     </div>
-    <%= f.submit 'UPDATE'%>
+    <%= f.submit%>
 
 <%end%>

@@ -1,8 +1,8 @@
 <%=link_to 'back to items', items_path%>
-<%= form_with url: items_path do |f|%>
+<%= form_with model: @item do |f|%>
     <div>
-        <%= f.label :name%>
-        <%= f.text_field :name%>
+        <%= f.label :title%>
+        <%= f.text_field :title%>
     </div>
     <div>
         <%= f.label :expected_cost%>
@@ -12,6 +12,6 @@
         <%= f.label :is_done%>
         <%= f.check_box  :is_done%>
     </div>
-    <%= f.submit 'CREATE'%>
+    <%= f.submit %>
 
 <%end%>
