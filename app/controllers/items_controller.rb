@@ -29,6 +29,6 @@ class ItemsController < ApplicationController
     def destroy
         @item = Item.find(params[:id])
         @item.delete
-        redirect_to items_path
+        redirect_to items_url
     end
 end
