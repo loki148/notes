@@ -1,5 +1,5 @@
 <%=link_to 'back to notes', notes_path%>
-<%= form_with url: notes_path do |f|%>
+<%= form_with model: @note do |f|%>
     <div>
         <%= f.label :name%>
         <%= f.text_field :name%>
@@ -8,6 +8,6 @@
         <%= f.label :body%>
         <%= f.text_area :body%>
     </div>
-    <%= f.submit 'CREATE'%>
+    <%= f.submit%>
 
 <%end%>
