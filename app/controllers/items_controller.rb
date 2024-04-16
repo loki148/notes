@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
 
     def update
         @item = Item.find(params[:id])
-        @item.update(title:params[:item][:title] ,expected_cost:params[:item][:expected_cost], is_done:params[:item][:is_done])
+        @item.update(item_params)
         redirect_to item_path(@item.id)
     end
 
@@ -31,5 +31,11 @@ class ItemsController < ApplicationController
         @item = Item.find(params[:id])
         @item.delete
         redirect_to items_url
+    end
+
+    private 
+
+    def item_params
+        params.require(:item).permit(:title, :expected_cost, :is_done) 
     end
 end
