@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
+
+    before_action :set_item, only: [:show, :edit,:update, :destroy]
+
     def show
-        @item = Item.find(params[:id])
     end
 
     def index
@@ -12,23 +14,20 @@ class ItemsController < ApplicationController
     end
 
     def create
-        @item = Item.create(title: params[:item][:title], expected_cost: params[:item][:expected_cost], is_done: params[:item][:is_done])
+        @item = Item.create(item_params)
         redirect_to @item
     end
 
 
     def edit
-        @item = Item.find(params[:id])
     end
 
     def update
-        @item = Item.find(params[:id])
         @item.update(item_params)
         redirect_to item_path(@item.id)
     end
 
     def destroy
-        @item = Item.find(params[:id])
         @item.delete
         redirect_to items_url
     end
@@ -37,5 +36,9 @@ class ItemsController < ApplicationController
 
     def item_params
         params.require(:item).permit(:title, :expected_cost, :is_done) 
+    end
+
+    def set_item
+        @item = Item.find(params[:id])
     end
 end
