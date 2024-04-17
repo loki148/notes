@@ -13,16 +13,24 @@ class NotesController < ApplicationController
     end
 
     def create
-        @note = Note.create(note_params)
-        redirect_to note_path(id: @note.id)
+        @note = Note.new(note_params)
+
+        if @note.save
+            redirect_to note_path(id: @note.id)
+        else
+            render 'new', status: :unprocessable_entity
+        end
     end
 
     def edit
     end
 
     def update
-        @note.update(note_params)
-        redirect_to @note
+        if @note.update(note_params)
+            redirect_to @note
+        else
+            render 'edit', status: :unprocessable_entity
+        end
     end
 
     def destroy

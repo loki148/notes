@@ -1,4 +1,11 @@
 <%= form_with model: @note do |f|%>
+    <% if @note.errors.any? %>
+        <ul>
+        <%@note.errors.each do |error| %>
+            <li><%=error.full_message %></li>
+        <% end %>
+        </ul>
+    <% end %>
     <div>
         <%= f.label :name%>
         <%= f.text_field :name%>
