@@ -1,0 +1,16 @@
+<%= form_with model: @item do |f|%>
+    <div>
+        <%= f.label :title%>
+        <%= f.text_field :title%>
+    </div>
+    <div>
+        <%= f.label :expected_cost%>
+        <%= f.number_field :expected_cost, step:0.01%>
+    </div>
+    <div>
+        <%= f.label :is_done%>
+        <%= f.check_box  :is_done%>
+    </div>
+    <%= f.submit %>
+
+<%end%>

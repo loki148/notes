@@ -1,14 +1,3 @@
 <%=link_to 'back to notes', notes_path%>
 <%=link_to 'back to note', note_path%>
-<%= form_with model: @note do |f|%>
-    <div>
-        <%= f.label :name%>
-        <%= f.text_field :name%>
-    </div>
-    <div>
-        <%= f.label :body%>
-        <%= f.text_area :body%>
-    </div>
-    <%= f.submit%>
-
-<%end%>
+<%=render partial:"form", locals: {text: 'Edit Note'}%>

@@ -1,0 +1,12 @@
+<%= form_with model: @note do |f|%>
+    <div>
+        <%= f.label :name%>
+        <%= f.text_field :name%>
+    </div>
+    <div>
+        <%= f.label :body%>
+        <%= f.text_area :body%>
+    </div>
+    <%= f.submit text%>
+
+<%end%>
