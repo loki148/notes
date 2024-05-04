@@ -18,9 +18,6 @@ Rails.application.routes.draw do
   delete 'items/:id', to: 'items#destroy', as: :delete_item
   get 'items/:id/edit', to: 'items#edit', as: :edit_item
 
-  get 'secret', to: 'secrets#private'
-
-
   root 'pages#home'
   
 end

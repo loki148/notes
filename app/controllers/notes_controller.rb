@@ -27,7 +27,7 @@ class NotesController < ApplicationController
 
     def update
         if @note.update(note_params)
-            redirect_to @note
+            redirect_to notes_url
         else
             render 'edit', status: :unprocessable_entity
         end
