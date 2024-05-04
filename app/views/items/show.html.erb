@@ -1,8 +1,15 @@
-<%= link_to 'back to items', items_path%>
-<%=link_to 'edit', edit_item_path(@item.id)%>
-<br/>
-<%=@item.title%>
-<br/>
-<%=@item.expected_cost%>
-<br/>
-<%=@item.is_done%>
+<div class='flex justify-between'>
+ <%= link_to 'back to items', items_path, class:'bg-indigo-600 hover:bg-indigo-800 text-white rounded-lg px-4 py-2'%>
+ <%=link_to 'edit', edit_item_path(@item.id), class:'bg-indigo-600 hover:bg-indigo-800 text-white rounded-lg px-4 py-2'%>
+</div>
+
+<h1 class='text-2xl font-semibold'><%=@item.title%></h1>
+<div class='flex justify-between items-center border-t border-indigo-400 pt-2'>
+ <h1 class='text-xl'>Expected Cost</h1>
+ <%=@item.expected_cost%>
+</div>
+<div class='flex justify-between items-center border-t border-indigo-400 pt-2'>
+ <h1 class='text-xl'>Was bought?</h1>
+ <%=@item.is_done%>
+</div>
+

@@ -3,22 +3,26 @@
   <head>
     <title>Notes</title>
      <div class="header">
-        <a class="/active" href="/">Home</a>
-        <a href="/contact">Contact</a>
-        <a href="/about">About</a>
-        <a href="/notes">Notes</a>
-        <a href="/items">Items</a>
+        
+        <a class="/active font-semibold text-blue-600" href="/">Home</a>
+        <a class="font-semibold text-blue-600" href="/contact">Contact</a>
+        <a class="font-semibold text-blue-600" href="/about">About</a>
+        <a class="font-semibold text-blue-600" href="/notes">Notes</a>
+        <a class="font-semibold text-blue-600" href="/items">Items</a>
       </div>
     </div> 
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-indigo-300">
+    <main class="container mx-auto mt-12 p-5">
+      <%= yield %>
+    </main>
   </body>
 </html>

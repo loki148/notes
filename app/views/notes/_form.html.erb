@@ -1,19 +1,20 @@
-<%= form_with model: @note do |f|%>
+<%= form_with model: @note, class:'grid grid-cols-1 gap-y-6' do |f|%>
     <% if @note.errors.any? %>
         <ul>
         <%@note.errors.each do |error| %>
-            <li><%=error.full_message %></li>
+            <li class='text-sm text-fuchsia-700'><%=error.full_message %></li>
         <% end %>
         </ul>
     <% end %>
     <div>
-        <%= f.label :name%>
-        <%= f.text_field :name%>
+        <%= f.label :name, class:"font-semibold text-blue-600"%>
+        <%= f.text_field :name, class: 'mt-1 w-full border-0 ring-2 px-3 py-1.5 ring-indigo-600 rounded-md' %>
     </div>
     <div>
-        <%= f.label :body%>
-        <%= f.text_area :body%>
+        <%= f.label :body, class:"font-semibold text-blue-600"%>
+        <%= f.text_area :body, class: 'mt-1 w-full border-0 ring-2 px-3 py-1.5 ring-indigo-600 rounded-md'%>
     </div>
-    <%= f.submit text%>
-
+    <div class=' flex justify-end'>
+     <%= f.submit text, class:'bg-indigo-600 hover:bg-indigo-800 text-white rounded-lg px-4 py-2'%>
+    <div>
 <%end%>

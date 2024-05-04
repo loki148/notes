@@ -1,23 +1,24 @@
-<%= form_with model: @item do |f|%>
+<%= form_with model: @item, class:'grid grid-col-1 gap-y-6' do |f|%>
     <% if @item.errors.any? %>
         <ul>
         <%@item.errors.each do |error| %>
-            <li><%=error.full_message%></li>
+            <li class='text-sm text-fuchsia-700'><%=error.full_message%></li>
         <% end %>
         </ul>
     <% end %>
     <div>
-        <%= f.label :title%>
-        <%= f.text_field :title%>
+        <%= f.label :title, class:"font-semibold text-blue-600"%>
+        <%= f.text_field :title, class:'mt-1 w-full border-0 ring-2 px-3 py-1.5 ring-indigo-600 rounded-md'%>
     </div>
     <div>
-        <%= f.label :expected_cost%>
-        <%= f.number_field :expected_cost, step:0.01%>
+        <%= f.label :expected_cost, class:"font-semibold text-blue-600"%>
+        <%= f.number_field :expected_cost, step:0.01, class:'mt-1 w-full border-0 ring-2 px-3 py-1.5 ring-indigo-600 rounded-md'%>
     </div>
     <div>
-        <%= f.label :is_done%>
-        <%= f.check_box  :is_done%>
+        <%= f.label :is_done, class:"font-semibold text-blue-600"%>
+        <%= f.check_box  :is_done, class:'rounded-lg px-4 ml-1'%>
     </div>
-    <%= f.submit %>
-
+    <div class='flex justify-end'>
+     <%= f.submit class:'bg-indigo-600 hover:bg-indigo-800 text-white rounded-lg px-4 py-2 '%>
+    </div>
 <%end%>

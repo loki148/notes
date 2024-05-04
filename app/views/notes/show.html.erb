@@ -1,7 +1,10 @@
-<%=link_to 'Back to notes', notes_path%>
-<%=link_to'edit', edit_note_path(@note.id)%>
+<div class='flex justify-between'>
+ <%=link_to 'Back to notes', notes_path, class:'bg-indigo-600 hover:bg-indigo-800 text-white rounded-lg px-4 py-2'%>
+ <%=link_to'edit', edit_note_path(@note.id), class:'bg-indigo-600 hover:bg-indigo-800 text-white rounded-lg px-4 py-2'%>
+</div>
 <br/>
-<%=@note.name%>
-<br/>
-<%=@note.body%>
-
+<div>
+    <h1 class='text-2xl font-semibold'><%=@note.name%></h1>
+    <br/>
+    <p class='mt-4'><%=@note.body%></p>
+</div>

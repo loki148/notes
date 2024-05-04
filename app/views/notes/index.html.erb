@@ -1,21 +1,35 @@
-<%=link_to 'New note', new_note_path%>
-<table>
+<div class="flex justify-between items-center">
+  <h1 class="text-2xl font-semibold">Notes</h1>
+  <%=link_to 'New note', new_note_path, class:'px-4 py-2 bg-indigo-600 hover:bg-indigo-800 text-white rounded-lg shadow-lg'%>
+</div>
+<h2 class="text-sm text-stone-300 opacity-60"><%=link_to "<- Home", root_path %></h2> 
+
+
+<table class= 'mt-6 w-full'>
  <thead>
-  <tr>
-    <th>ID</th>
-    <th>name</th>
-    <th>body</th>
-    <th>action</th>
+  <tr class="bg-indigo-400 text-left">
+    <th class="py-3 px-3">ID</th>
+    <th>Name</th>
+    <th>Body</th>
+    <th>Actions</th>
+    
   </tr>
+    
  </thead>
  <tbody>
     <% @notes.each do |note| %>
-        <tr>
-         <td><%=link_to note.id, note_path(id: note.id)%></td>
+        <tr class='border-t border-indigo-400'>
+         <td class="py-3 px-3"><%=link_to note.id, note_path(id: note.id)%></td>
          <td><%=link_to note.name, note_path(note)%></td>
          <td><%=link_to note.body, note%></td> 
-         <td><%=link_to'edit', edit_note_path(note.id)%></td>
-         <td><%= button_to 'delete', note, method: :delete %></td>
+         
+         <td>
+          <div class="flex">
+           <%=link_to 'Edit', edit_note_path(note.id), class: 'px-3 py-1.5 border hover:bg-indigo-400 text-indigo-500 border-indigo-500 rounded-lg shadow-lg '%>
+           <%= button_to 'Delete', note, method: :delete, class: 'ml-1 px-3 py-1.5 bg-rose-100 hover:bg-rose-300 opacity-60 text-rose-600 rounded-lg shadow-lg' %>
+          </div>
+         </td>
+
         </tr>
     <% end %>
     
